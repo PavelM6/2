@@ -1,0 +1,9 @@
+import requests
+
+
+city = input()
+appid = "03a344d650f20371ce45f1d5fa3d93a1"
+
+res = requests.get("http://api.openweathermap.org/data/2.5/weather", params={'q':city, 'units': 'metric', 'lang': 'ru', 'APPID': appid})
+data = res.json()
+print('Температура', data['main']['temp'])
